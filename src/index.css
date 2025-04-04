@@ -1,3 +1,6 @@
+@import "tailwindcss/preflight";
+@tailwind utilities;
+
 /* Performance optimized glassmorphic effect */
 .glassmorphic-effect {
     filter: blur(250px);
