@@ -2,17 +2,16 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import { BrowserRouter } from 'react-router-dom';
 import AppRoutes from './components/Routers';
-import { ThemeProvider } from '@mui/material/styles';
-import theme from './theme';
+import MuiThemeProvider from './MuiThemeProvider';
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
+    <MuiThemeProvider>
       <BrowserRouter>
         <Navbar />
         <AppRoutes />
       </BrowserRouter>
-    </ThemeProvider>
+    </MuiThemeProvider>
   );
 }
 

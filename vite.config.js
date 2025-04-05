@@ -6,4 +6,12 @@ export default defineConfig({
   css: {
     postcss: './postcss.config.js',
   },
+  build: {
+    cssCodeSplit: true,
+    rollupOptions: {
+      output: {
+        assetFileNames: 'assets/[name]-[hash][extname]',
+      },
+    },
+  },
 })
