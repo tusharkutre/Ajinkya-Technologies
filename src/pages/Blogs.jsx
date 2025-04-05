@@ -1,6 +1,6 @@
 import React from "react";
 import { blogs } from "../blogs";
-import blogposts from "../assets/blog-writing.png";
+import blogposts from "../assets/blog.png";
 import { motion } from "framer-motion";
 import BlogCard from "../components/BlogCard";
 

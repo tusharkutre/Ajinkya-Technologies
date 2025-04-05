@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ChevronDownIcon } from "@heroicons/react/16/solid";
-import { Field, Label, Switch } from "@headlessui/react";
+import { Switch } from "@headlessui/react";
 
 // Form field configurations
 const formFields = {
@@ -232,28 +232,32 @@ const Contact = () => {
               onCountryChange={handleChange("country")}
             />
 
-            <Field className="flex gap-x-4 sm:col-span-2">
+            <div className="flex gap-x-4 sm:col-span-2">
               <div className="flex h-6 items-center">
                 <Switch
                   checked={agreed}
                   onChange={setAgreed}
-                  className="group flex w-8 flex-none cursor-pointer rounded-full bg-gray-200 p-px ring-1 ring-gray-900/5 transition-colors duration-200 ease-in-out ring-inset focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 data-checked:bg-indigo-600"
+                  className={`${
+                    agreed ? "bg-indigo-600" : "bg-gray-200"
+                  } flex w-8 flex-none cursor-pointer rounded-full p-px ring-1 ring-inset ring-gray-900/5 transition-colors duration-200 ease-in-out focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600`}
                 >
                   <span className="sr-only">Agree to policies</span>
                   <span
                     aria-hidden="true"
-                    className="h-4 w-4 transform rounded-full bg-white ring-1 shadow-xs ring-gray-900/5 transition duration-200 ease-in-out group-data-checked:translate-x-3.5"
+                    className={`${
+                      agreed ? "translate-x-3.5" : "translate-x-0"
+                    } h-4 w-4 transform rounded-full bg-white shadow-sm ring-1 ring-gray-900/5 transition duration-200 ease-in-out`}
                   />
                 </Switch>
               </div>
-              <Label className="text-sm leading-6 text-gray-600">
+              <label className="text-sm leading-6 text-gray-600">
                 By selecting this, you agree to our{" "}
-                <a href="#" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                <a href="#" className="font-semibold text-indigo-600">
                   privacy&nbsp;policy
                 </a>
                 .
-              </Label>
-            </Field>
+              </label>
+            </div>
           </div>
 
           <div className="mt-10">
